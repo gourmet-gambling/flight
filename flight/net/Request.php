@@ -230,10 +230,7 @@ class Request
         }
 
         $method = $this->method ?? self::getMethod();
-
-        if ($method === 'POST' || $method === 'PUT' || $method === 'DELETE' || $method === 'PATCH') {
-            $body = file_get_contents($this->stream_path);
-        }
+        $body = file_get_contents($this->stream_path);
 
         $this->body = $body;
 
